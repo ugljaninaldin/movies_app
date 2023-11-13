@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
         li{
             list-style: none;
         }
@@ -14,7 +18,7 @@
     <h1>Top Shark Movies</h1>
     <ul>
         {% for movie in movies %}
-            <li>{{ movie.id }}. {{ movie.title }} - {{ movie.year }}</li>
+            <li><a href="{{ movie.id }}">{{ movie.id }}. {{ movie.title }} - {{ movie.year }}</a></li>
         {% endfor %}
     </ul>
 </body>
