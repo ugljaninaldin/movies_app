@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
     <style>
-        a{
-            text-decoration: none;
-            color: black;
-        }
-        li{
-            list-style: none;
-        }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        list-style: none;
+      }
+
+      .underline:hover{
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Top Shark Movies</h1>
     <ul>
-        {% for movie in movies %}
-            <li><a href="{{ movie.id }}">{{ movie.id }}. {{ movie.title }} - {{ movie.year }}</a></li>
-        {% endfor %}
+      {% for movie in movies %}
+      <li>
+        <a href="{{ movie.id }}">
+          {{ forloop.counter }}.
+          <span class="underline"> {{movie.title }} - {{ movie.year }}</span></a
+        >
+      </li>
+      {% endfor %}
     </ul>
     <a href="/movies/add">Add a movie</a>
-</body>
+  </body>
 </html>
